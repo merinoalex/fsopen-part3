@@ -24,6 +24,22 @@ let persons = [
     }
 ]
 
+app.use(express.json())
+
+app.post('/api/persons', (req, res) => {
+    const body = req.body
+
+    const person = {
+        name: body.name,
+        number: body.number,
+        id: Math.floor(Math.random() * 100)
+    }
+
+    persons = persons.concat(person)
+
+    res.json(person)
+})
+
 app.get('/', (req, res) => {
     res.send('<h1>Phonebook</h1>')
 })
