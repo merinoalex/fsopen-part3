@@ -5,3 +5,21 @@ Content-Type: application/json
     "name": "Martin Heidegger",
     "number": "55 6677 8899"
 }
+
+###
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+    "name": "Plato",
+    "number": null
+}
+
+###
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+    "name": "Ada Lovelace",
+    "number": "55 6677 8899"
+}

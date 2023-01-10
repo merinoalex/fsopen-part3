@@ -1,3 +1,4 @@
+const { response } = require('express')
 const express = require('express')
 const app = express()
 
@@ -28,6 +29,16 @@ app.use(express.json())
 
 app.post('/api/persons', (req, res) => {
     const body = req.body
+
+    if (!body.number || !body.name) {
+        return res.status(400).json({
+            error: 'Name or number missing.'
+        })
+    } else if (persons.find(person => person.name === body.name)) {
+        return res.status(400).json({
+            error: 'Name already exists in the phonebook.'
+        })
+    }
 
     const person = {
         name: body.name,
