@@ -1,1 +1,4 @@
-GET http://localhost:3001/api/persons
+# @prompt address
+// http://localhost:3001/
+// https://phonebook-alexmerino.fly.dev/
+GET {{address}}
