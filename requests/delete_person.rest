@@ -1,5 +1,5 @@
 # @prompt address
 # @prompt id
-// http://localhost:3001/
-// https://phonebook-alexmerino.fly.dev/
-DELETE {{address}}/{{id}}
+// http://localhost:3001
+// https://phonebook-alexmerino.fly.dev
+DELETE {{address}}/api/persons/{{id}}

@@ -1,7 +1,7 @@
 # @prompt address
-// http://localhost:3001/
-// https://phonebook-alexmerino.fly.dev/
-POST {{address}}
+// http://localhost:3001
+// https://phonebook-alexmerino.fly.dev
+POST {{address}}/api/persons
 Content-Type: application/json
 
 {
@@ -11,7 +11,7 @@ Content-Type: application/json
 
 ###
 # @prompt address
-POST {{address}}
+POST {{address}}/api/persons
 Content-Type: application/json
 
 {
@@ -21,7 +21,7 @@ Content-Type: application/json
 
 ###
 # @prompt address
-POST {{address}}
+POST {{address}}/api/persons
 Content-Type: application/json
 
 {
