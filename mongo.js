@@ -23,6 +23,7 @@ const Person = mongoose.model('Person', personSchema)
 if (process.argv.length === 3) {
     mongoose
         .connect(url)
+        .then(console.log('Connected to MongoDB!'))
         .then(
             Person
                 .find({})
@@ -31,13 +32,15 @@ if (process.argv.length === 3) {
                     result.forEach(person => {
                         console.log(`${person.name} ${person.number}`)
                     })
-                    mongoose.connection.close() // execute after callback function is done?
+                    mongoose.connection.close() // execute after callback function is done
                 })
         )
 } else if (process.argv.length === 5) {
     mongoose
         .connect(url)
         .then(() => {
+            console.log('Connected to MongoDB!')
+
             const person = new Person({
                 name: name,
                 number: number,
