@@ -3,3 +3,13 @@
 // http://localhost:3001
 // https://phonebook-alexmerino.fly.dev
 DELETE {{address}}/api/persons/{{id}}
+
+###
+// Inexistent entry
+# @prompt address
+DELETE {{address}}/api/persons/63c8a22559fb568390e375c3
+
+###
+// Invalid ID
+# @prompt address
+DELETE {{address}}/api/persons/someInvalidId
