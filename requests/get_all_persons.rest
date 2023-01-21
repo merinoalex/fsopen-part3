@@ -1,4 +1,11 @@
 # @prompt address
-// http://localhost:3001/
-// https://phonebook-alexmerino.fly.dev/
+// http://localhost:3001
+// https://phonebook-alexmerino.fly.dev
 GET {{address}}/api/persons
+
+###
+# @prompt address
+# @prompt id
+// Get individual person
+// 63c85d0c3b976ec59311023e
+GET {{address}}/api/persons/{{id}}
