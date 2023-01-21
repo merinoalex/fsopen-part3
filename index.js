@@ -18,17 +18,17 @@ morgan.token('body', (req, res) => {
 app.use(morgan(':method :url :status :res[content-length] - :response-time ms :body'))
 
 app.post('/api/persons', (req, res, next) => {
-    const body = req.body
+    const { name, number } = req.body
 
-    /* else if (persons.find(person => person.name === body.name)) {
+    if (Person.find({}).then(persons => persons.find(p => p.name === name))) {
         return res.status(400).json({
-            error: 'Name already exists in the phonebook.'
+            error: 'Name already exists in the phonebook'
         })
-    } */
+    }
 
     const person = new Person({
-        name: body.name,
-        number: body.number,
+        name: name,
+        number: number,
     })
 
     person.save()
