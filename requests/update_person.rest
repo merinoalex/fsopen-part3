@@ -1,0 +1,10 @@
+# @prompt address
+// http://localhost:3001
+// https://phonebook-alexmerino.fly.dev
+PUT {{address}}/api/persons/63cb2db54a9aff2036ff5506
+Content-Type: application/json
+
+{
+    "name": "Michel Foucault",
+    "number": "55 6677 8899"
+}
