@@ -54,21 +54,21 @@ const App = () => {
             setNotifMessage(
               {
                 status: 'error',
-                message: `Information of ${newName} has already been removed from server`
+                message: error.response.data.error
               }
             )
             setTimeout(() => {
               setNotifMessage({status: null, message: null})
             }, 5000);
-            console.error(error)
-            setPersons(persons.filter(p => p.id !== changedPerson.id))
+/*             console.error(error)
+            setPersons(persons.filter(p => p.id !== changedPerson.id)) */
           })
       }
     } else {
       personService
         .create(personObject)
-        .then(returnedPerson => {
-          setPersons(persons.concat(returnedPerson))
+        .then(createdPerson => {
+          setPersons(persons.concat(createdPerson))
           setNewName('')
           setNewNumber('')
         })
@@ -81,6 +81,17 @@ const App = () => {
           )
           setTimeout(() => {
             setNotifMessage({status: null, message: null})
+          }, 5000);
+        })
+        .catch(error => {
+          setNotifMessage(
+            {
+              status: 'error',
+              message: error.response.data.error
+            }
+          )
+          setTimeout(() => {
+            setNotifMessage({ status: null, message: null })
           }, 5000);
         })
     }
